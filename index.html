@@ -1,0 +1,440 @@
+<?php 
+    $result = "";
+    $error  = "";
+  if(isset($_POST['submit']))
+  {
+    require 'phpmailer/PHPMailerAutoload.php';
+    $mail = new PHPMailer;
+    //smtp settings
+    $mail->isSMTP(); // send as HTML
+    $mail->Host = "smtp.gmail.com"; // SMTP servers
+    $mail->SMTPAuth = true; // turn on SMTP authentication
+    $mail->Username = "Your mail"; // Your mail
+    $mail->Password = 'Your password mail'; // Your password mail
+    $mail->Port = 587; //specify SMTP Port
+    $mail->SMTPSecure = 'tls';                               
+    $mail->setFrom($_POST['email'],$_POST['name']);
+    $mail->addAddress('Your mail');
+    $mail->addReplyTo($_POST['email'],$_POST['name']);
+    $mail->isHTML(true);
+    $mail->Subject='Form Submission:' .$_POST['subject'];
+    $mail->Body='<h3>Name :'.$_POST['name'].'<br> Email: '.$_POST['email'].'<br>Message: '.$_POST['message'].'</h3>';
+    if(!$mail->send())
+    {
+      $error = "Something went worng. Please try again.";
+    }
+    else 
+    {
+      $result="Thanks\t" .$_POST['name']. " for contacting us.";
+    }
+  }
+
+?><!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alcobia Lda</title>
+    <link rel="stylesheet" href="/styles.css">
+
+
+<!-- FORMULÀRIO 1 ------
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script type="text/javascript" src="script.js"></script>
+    <script type="text/javascript" src="form/form.js"></script>
+    <php include '/form/handler.php' ?></php>  -->
+
+    <script type="text/javascript" src="script.js"></script>
+
+
+</head>
+<body>
+    <!-- NAVBAR -->
+    <header>
+         <a href="#"><img src="/img/logo_Prt-01.png" class="logoHome"></a> 
+         <div class="menuToggle" onclick="toggleMenu()">
+            <div class="bar1"></div>
+            <div class="bar2"></div>
+            <div class="bar3"></div>
+        </div>
+         <ul class="navigation">
+            <li><a href="#banner" onclick="toggleMenu()">Home</a></li>
+            <li><a href="#sobre" onclick="toggleMenu()">Sobre</a></li>
+            <li><a href="#servicos" onclick="toggleMenu()">Serviços</a></li>
+            <li><a href="#parceiros" onclick="toggleMenu()">Parceiros</a></li>
+            <li><a href="#testemunhos" onclick="toggleMenu()">Testemunhos</a></li>
+            <li><a href="#contactos" onclick="toggleMenu()">Contactos</a></li>
+         </ul>
+    </header>
+    <!-- TEXTO DE ENTRADA / BANNER -->
+    <section class="banner" id="banner">
+        <div class="content">
+            <h2>Materiais de Construção</h2>
+            <p>Comércio a retalho de material de bricolage, equipamento sanitário, 
+            ladrilhos e materiais similares, em estabelecimentos especializados.</p>
+
+            <!-- <p>Dispomos de soluções construtivas e certificadas para os mais diversos fins.</p> -->
+            <a href="#contactos" class="btn">Saber Mais</a>
+        </div>
+    </section>
+
+    <!-- SOBRE/ABOUT SECTION -->
+    <section class="sobre" id="sobre">
+        <div class="row">
+            <div class="col50">
+                <h2 class="titleText">Sobre</h2>
+                <p>Seja bem vindo à Alcobia & Fernandes , Lda empresa especializada no comércio e distribuição de materiais de construção. Com 35 anos de experiência no ramo ,dispomos de soluções construtivas e certificadas para os mais diversos fins. <br> <br>
+                Destacamo-nos pelo profissionalismo, rigor, qualidade do serviço e produtos que comercializa. Irá encontrar um vasto e diversificado leque de soluções para a suas necessidades. Garantimos uma visão experiente e profissional da nossa equipa.</p><br>
+
+                <p>Aguardamos a sua visita e certamente iremos encontrar uma solução adequada às suas necessidades.</p>
+            </div>
+            <div class="col50">
+                <div class="imgBx">
+                    <img src="/img/AbouUs.jpg">
+                    <!-- <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus nulla expedita sunt repellendus aspernatur numquam fugit, dolor velit, odio nostrum laudantium saepe praesentium aliquam reiciendis explicabo inventore optio, voluptate nihil.</p> -->
+                </div>
+            </div>
+        </div>
+    </section>
+       
+    <!-- SERVICOS/MENU SECTION -->
+
+    <section class="servicos" id="servicos">
+        <div class="title">
+            <h2 class="titleText">Serviços</h2>
+            <!-- <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. </p> -->
+        </div>
+        <div class="content">
+            <div class="box">
+                <div class="imgBx">
+                    <img src="/img/Servicos/Canalizacao.jpg">
+                </div>
+                <div class="text">
+                    <h3>Canalização</h3>
+                </div> 
+            </div>
+            <div class="box">
+                <div class="imgBx">
+                    <img src="/img/Servicos/Desentupimento.jpg">
+                </div>
+                <div class="text">
+                    <h3>Desentupimentos</h3>
+                </div>
+            </div>  
+            <div class="box">
+                <div class="imgBx">
+                    <img src="/img/Servicos/Esquentador.jpg">
+                </div>
+                <div class="text">
+                    <h3>Esquentadores</h3>
+                </div>
+             </div>
+            <div class="box">
+                <div class="imgBx">
+                    <img src="/img/Servicos/Estores.jpg">
+                </div>
+                <div class="text">
+                    <h3>Instalação de estores</h3>
+                </div>
+             </div>
+            <div class="box">
+                <div class="imgBx">
+                    <img src="/img/Servicos/Fechaduras.jpg">
+                </div>
+                <div class="text">
+                    <h3>Instalação de fechaduras</h3>
+                </div>
+             </div>
+            <div class="box">
+                <div class="imgBx">
+                    <img src="/img/Servicos/Electricidade.jpg">
+                </div>
+                <div class="text">
+                    <h3>Electricidade</h3>
+                </div>
+             </div>
+        </div>
+             <div class="title">
+                <a href="#" class="btn">Ver todos</a>
+             </div>
+    </section>
+
+    <!-- MARCAS/EXPERT SECTION -->
+
+    <section class="parceiros" id="parceiros">
+        <div class="title">
+            <h2 class="titleText">Parceiros</h2>
+            <p>Damos a conhecer as marcas comercializadas</p>
+        </div>
+        <div class="content">
+            <div class="box">
+                <div class="imgBx">
+                    <img src="/img/parceiros/logo_1.png">
+                </div>
+                <div class="text">
+                    <!-- <h3>Descrição das marcas1</h3> -->
+                </div>
+            </div>
+            <div class="box">
+                <div class="imgBx">
+                    <img src="/img/parceiros/logo_2.png">
+                </div>
+                <div class="text">
+                    <!-- <h3>Descrição das marcas2</h3> -->
+                </div>
+            </div>
+            <div class="box">
+                <div class="imgBx">
+                    <img src="/img/parceiros/logo_3.png">
+                </div>
+                <div class="text">
+                    <!-- <h3>Descrição das marcas3</h3> -->
+                </div>
+            </div>
+            <div class="box">
+                <div class="imgBx">
+                    <img src="/img/parceiros/logo_4.png">
+                </div>
+                <div class="text">
+                    <!-- <h3>Descrição das marcas4</h3> -->
+                </div>
+            </div>
+            <div class="box">
+                <div class="imgBx">
+                    <img src="/img/parceiros/logo_5.png">
+                </div>
+                <div class="text">
+                    <!-- <h3>Descrição das marcas5</h3> -->
+                </div>
+            </div>
+            <div class="box">
+                <div class="imgBx">
+                    <img src="/img/parceiros/logo_6.png">
+                </div>
+                <div class="text">
+                    <!-- <h3>Descrição das marcas6</h3> -->
+                </div>
+            </div>
+            <div class="box">
+                <div class="imgBx">
+                    <img src="/img/parceiros/logo_7.png">
+                </div>
+                <div class="text">
+                    <!-- <h3>Descrição das marcas7</h3> -->
+                </div>
+            </div>
+            <div class="box">
+                <div class="imgBx">
+                    <img src="/img/parceiros/logo_8.png">
+                </div>
+                <div class="text">
+                    <!-- <h3>Descrição das marcas8</h3> -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION Testemunhos / Testimimonials -------------------------->
+    <section class="testemunhos" id="testemunhos">
+        <div class="title white">
+            <h2 class="titleText">Testemunhos</h2>
+            <p><i>"Recomendo os serviços Alcobia"</i></p>
+        </div>
+        <div class="content">
+            <div class="box">
+                <div class="imgBx">
+                    <img src="/img/Backs/back_1.jpg">
+                </div>
+                <div class="text">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic, ex qui delectus nemo 
+                    reprehenderit maxime fugiat dolorem rerum ab autem, aliquid aliquam quis eveniet 
+                    laboriosam facilis culpa animi vero cumque!</p>
+                    <h3>Deus chama-se ALCOBIA!</h3>
+                </div>
+            </div>
+            <div class="box">
+                <div class="imgBx">
+                    <img src="/img/Backs/back_2.jpg">
+                </div>
+                <div class="text">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic, ex qui delectus nemo 
+                        reprehenderit maxime fugiat dolorem rerum ab autem, aliquid aliquam quis eveniet 
+                        laboriosam facilis culpa animi vero cumque!</p>
+                        <h3>Deus chama-se ALCOBIA!</h3>
+                </div>
+            </div>
+            <div class="box">
+                <div class="imgBx">
+                    <img src="/img/Backs/back_3.jpg">
+                </div>
+                <div class="text">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic, ex qui delectus nemo 
+                        reprehenderit maxime fugiat dolorem rerum ab autem, aliquid aliquam quis eveniet 
+                        laboriosam facilis culpa animi vero cumque!</p>
+                        <h3>Deus chama-se ALCOBIA!</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="contactos" id="contactos">
+        <div class="title">
+            <h2 class="titleText">Contacte-nos</h2><br>
+            <pre style="text-align:left;">
+            <b>Telemóvel: </b>925 835 322    <b>Telefone: </b>214 904 135
+            <b>Email: </b>empresa_alcobia@hotmail.com
+
+            <b>Segunda a Sexta: </b>9:00h - 13:00h e 14:30h - 18:30h
+            <b>Sábado: </b>9:00h - 13:00h
+
+            <b>Morada: </b>Av. Padre Bartolomeu de Gusmão 15 2720-402 Damaia</pre>
+        </div>
+        <div class="contactForm">
+            <h3>Enviar mensagem</h3>
+            <div class="inputBox">
+                <input type="text" placeholder="Nome">
+            </div>
+            <div class="inputBox">
+                <input type="text" placeholder="Email">
+            </div>
+            <div class="inputBox">
+                <textarea placeholder="Escreva a sua mensagem"></textarea>
+            </div>
+            <div class="inputBox">
+                <input type="submit" value="Enviar">
+            </div>
+        </div>
+        <div class="contactFormMap"> 
+            <div class="mapouter">
+                <div class="gmap_canvas">
+                    <iframe class="gmap_iframe" 
+                            width="100%"
+                            height="100%"
+                            frameborder="0" 
+                            scrolling="no" 
+                            marginheight="0" 
+                            marginwidth="0" 
+                            src="https://maps.google.com/maps?width=600&amp;height=370&amp;hl=en&amp;saddr=Av.+Padre+Bartolomeu+de+Gusmão+15,+2720-402+Damaia,+Portugal&amp;daddr=&amp;t=&amp;z=15&amp;ie=UTF8&amp;iwloc=B&amp;output=embed">
+                        </iframe>
+                        <!-- <a href="https://piratebayproxy.net/">pirate bay proxy</a> -->
+                    </div><style>.mapouter{position:relative;text-align:right;width:100%;height:370px;}.gmap_canvas {overflow:hidden;background:none!important;width:100%;height:370px;}.gmap_iframe {height:370px!important;}</style></div> 
+        </div> 
+
+        <!-- TESTE DE FORMULÀRIO 1 !!!!! 
+	
+					<div class="panel-body">
+						<form id="reused_form">
+						 	<div class="form-group">
+						 		<label><i class="fa fa-user" aria-hidden="true"></i>Nome</label>
+						 		<input type="text" name="name" class="form-control" placeholder="O seu Nome">
+						 	</div>
+						 	<div class="form-group">
+						 		<label><i aria-hidden="true"></i>Email</label>
+						 		<input type="email" name="email" class="form-control" placeholder="O seu Email">
+						 	</div>
+						 	<div class="form-group">
+						 		<label><i aria-hidden="true"></i>Mensagem</label>
+						 		<textarea rows="3" name="message" class="form-control" placeholder="Mensagem"></textarea>
+						 	</div>
+
+
+						 	<div class="form-group">
+						 		<button>Enviar</button>
+						 	</div>
+						</form>
+						<div id="error_message" style="width:100%; height:100%; display:none; ">
+						<h4>Erro</h4>
+						Ocorreu um erro ao enviar a sua mensagem. Tente de novo.
+						</div>
+						<div id="success_message" style="width:100%; height:100%; display:none; ">
+						<h2>Mensagem enviado com sucesso!.</h2>
+                        </div>
+                        
+					</div>
+		
+         Form Ended ---------------------------------------------------- -->
+
+
+        <!-- TESTE DE FORMULÀRIO  2 !!!!-->
+
+        <div class="contact1">
+            <div class="container-contact1">
+                <div class="contact1-pic js-tilt" data-tilt>
+                    <img src="images/img-01.png" alt="IMG">
+                </div>
+    
+                <form class="contact1-form validate-form">
+                    <span class="contact1-form-title">
+                        @SOENGSOUY
+                    </span>
+    
+                    <div class="wrap-input1 validate-input" data-validate = "Name is required">
+                        <input class="input1" type="text" name="name" placeholder="Name">
+                        <span class="shadow-input1"></span>
+                    </div>
+    
+                    <div class="wrap-input1 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
+                        <input class="input1" type="text" name="email" placeholder="Email">
+                        <span class="shadow-input1"></span>
+                    </div>
+    
+                    <div class="wrap-input1 validate-input" data-validate = "Subject is required">
+                        <input class="input1" type="text" name="subject" placeholder="Subject">
+                        <span class="shadow-input1"></span>
+                    </div>
+    
+                    <div class="wrap-input1 validate-input" data-validate = "Message is required">
+                        <textarea class="input1" name="message" placeholder="Message"></textarea>
+                        <span class="shadow-input1"></span>
+                    </div>
+    
+                    <div class="container-contact1-form-btn">
+                        <button class="contact1-form-btn">
+                            <span>
+                                Send Email
+                                <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+                            </span>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    
+	
+					
+		
+        <!-- Form Ended ---------------------------------------------------- -->
+        
+        
+
+       
+    </section>
+
+    <!--====================================================-->
+	<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
+	<!--====================================================-->
+	<script src="vendor/bootstrap/js/popper.js"></script>
+	<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+	<!--=====================================================-->
+	<script src="vendor/select2/select2.min.js"></script>
+	<!--=====================================================-->
+	<!-- <script src="vendor/tilt/tilt.jquery.min.js"></script> -->
+	<script src="vendor/tilt/tilt.jquery.min.js"></script>
+	<script >
+		$('.js-tilt').tilt({
+			scale: 1.1
+		})
+	</script>
+
+// <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-23581568-13');
+</script>
+      
+</body>
+</html>

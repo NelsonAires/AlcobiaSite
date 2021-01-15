@@ -1,0 +1,537 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    scroll-behavior: smooth;
+}
+
+p {
+    font-weight: 300;
+    color: #111;
+}
+
+.banner {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url(/img/back_brick_2.jpg);
+    background-size: cover;
+}
+
+.banner .content {
+    max-width: 900px;
+    text-align: center;
+}
+
+.banner .content h2 {
+    font-size: 6em;
+    color: rgb(17, 17, 17);
+}
+
+.banner .content p {
+    font-size: 1.3em;
+    color: #1B75BB;
+}
+ 
+.btn {
+    font-size: 1em;
+    color: #fff;
+    background: #1B75BB;
+    display: inline-block;
+    padding: 10px 30px;
+    margin-top: 20px;
+    text-transform: uppercase;
+    text-decoration: none;
+    letter-spacing: 2px;
+    transition: 0.5s;
+}
+
+.btn:hover { 
+    letter-spacing: 8px;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 15px 100px;
+    z-index: 10000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: 0.5s;
+}
+
+header.sticky {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 20px 100px;
+    box-shadow: 0 0 0 0 0.5;
+}
+
+header ul li a:hover {
+    color:rgb(17, 17, 17);
+}
+
+header .logoHome {
+    padding-top: 5px;
+    width: 9em;
+}
+
+header .navigation {
+    position: relative;
+    display: flex;
+}
+
+header .navigation li {
+    list-style: none;
+    margin-left: 30px;
+}
+
+header .navigation li a {
+    text-decoration: none;
+    color: #1B75BB;
+    font-weight: 300;
+    transition: all 0.3s ease;
+
+}
+
+header.sticky .navigation li a {
+    color: #1B75BB;
+    transition: all 0.3s ease;
+
+}
+
+header.sticky .navigation li a:hover {
+    color: rgb(17, 17, 17);
+}
+
+/* SECTION  Serviços*/
+
+section {
+    padding: 100px;
+}
+
+.row {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.row .col50 {
+    position: relative;
+    width: 48%;
+}
+
+.row .col50 .imgBx {
+    position: relative;
+    width: 100%; 
+    height: 100%;
+}
+
+.row .col50 .imgBx img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%; 
+    height: 100%;
+    object-fit: cover;
+}
+
+.titleText {
+    color: #111;
+    font-size: 2em;
+    font-weight: 300;
+}
+
+.title {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.servicos .content {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-top: 40px;
+    border-radius: 50px;
+
+}
+
+.servicos .content .box {
+    width: 340px;
+    margin: 20px;
+    border: 15px solid #fff;
+    box-shadow: 0 5px 35px rgba(0,0,0,0.08 );
+}
+
+.servicos .content .box .imgBx {
+    position: relative;
+    width: 100%;
+    height: 300px;
+}
+
+.servicos .content .box .imgBx img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.servicos .content .box .text {
+    padding: 15px 0 5px;
+}
+
+.servicos .content .box .text h3 {
+    font-weight: 400;
+    color: #111;
+}
+
+.parceiros .content {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-top: 40px;
+}
+
+.parceiros .content .box {
+    /* width: 250px;
+    margin: 15px; */
+    height: 250px;
+    margin: 15px;
+}
+
+.parceiros .content .box .imgBx {
+    position: relative;
+    /* width: 100%;
+    height: 300px; */
+    width: 250px;
+    height: 100%;
+}
+
+.parceiros .content .box .imgBx img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* .parceiros .content .box .text {
+    padding: 15px 0 5px;   
+}
+
+.parceiros .content .box .text h3 {
+    font-weight: 400;
+    color: #111;
+} */
+
+/* --------------- TESTEMUNHOS --------------- */
+
+.testemunhos {
+    background: url(/img/back_brick_2.jpg);
+    background-size: cover;
+}
+
+.white .titleText,
+.white p {
+    color:#111;
+}
+
+.testemunhos .content {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-top: 40px;
+}
+
+.testemunhos .content .box {
+    width: 340px;
+    margin: 20px;
+    padding: 40px;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 10px;
+    box-shadow: 0 5px 35px rgba(0,0,0,0.08 );
+}
+
+.testemunhos .content .box .imgBx {
+    position: relative;
+    /* width: 100%;
+    height: 300px; */
+    width: 80px;
+    height: 80px;
+    margin-bottom: 20px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.testemunhos .content .box .text {
+    text-align: center;
+}
+
+.testemunhos .content .box .text p {
+    color: #666;
+    font-style: italic;
+}
+
+.testemunhos .content .box .text h3 {
+    margin-top: 20px;
+    color: #111;
+    font-size: 1em;
+    color: #1B75BB;
+    font-weight: 600;
+}
+
+
+
+/* ----------------- CONTACTOS ----------------- */
+
+.contactos {
+    /* background: #1B75BB; */
+    /* background: url(/img/Backs/footer_2.jpg) 0.8; */
+    background-size: cover;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.infoContactos {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 10px;
+}
+
+.infoContactos p {
+    /* align-items:left !important; */
+}
+
+
+
+.contactForm {
+    padding: 50px 35px;
+    background: #fff;
+    box-shadow: 0 15px 50px rgba(0,0,0,0.1);
+    max-height: 400px;
+    width: 50%;
+    max-width: 400px;
+    margin-top: 50px;
+    border-radius: 10px;
+}
+
+.contactFormMap {
+    align-items: center;
+    padding: 15px 15px;
+    background: #fff;
+    box-shadow: 0 15px 50px rgba(0,0,0,0.1);
+    width: 50%;
+    max-height: 400px;
+    max-width: 600px;
+    margin-top: 50px;
+    border-radius: 10px;
+}
+
+.contactForm h3 {
+    color: #111;
+    font-size: 1em;
+    margin-bottom: 20px;
+    font-weight: 500;
+}
+
+.contactForm .inputBox {
+    position: relative;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.contactForm .inputBox input,
+.contactForm .inputBox textarea {
+    width: 100%;
+    border: 1px solid #555;
+    padding: 10px;
+    color: #111;
+    outline: none;
+    font-size: 16px;
+    font-weight: 300;
+    resize: none;
+}
+
+.contactForm .inputBox input[type="submit"] {
+    font-size: 1em;
+    color: #fff;
+    background: #1B75BB;
+    display: inline-block;
+    text-transform: uppercase;
+    text-decoration: none;
+    letter-spacing: 2px;
+    transition: 0.5s;
+    max-width: 100px;
+    font-weight: 500;
+    border: none;
+}
+
+/* ----------------- @MEDIA 991PX  ----------------- */
+
+@media (max-width: 991px) {
+
+    header, 
+    header.sticky {
+        padding: 10px 20px;
+    }
+
+    header .navigation {
+        display: none;
+    }
+
+    header .navigation.active {
+        width: 100%;
+        height: calc(100% - 68px);
+        position: fixed;
+        top: 80px;
+        left: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        background: #fff;
+    }
+
+    header .navigation li {
+        margin-left: 0;
+    }
+
+    header .navigation li a {
+        color: #111;
+        font-size: 1.6em;
+    }
+
+
+    /* MENU BURGUER ANIMATION  */
+    .menuToggle {
+        display: block;
+        cursor: pointer;
+    }
+
+    .bar1, .bar2, .bar3 {
+        width: 40px;
+        height: 5px;
+        border-radius: 10px;
+        background-color: rgb(0, 0, 0);
+        margin: 6px 0;
+        transition: 0.3s;
+      }
+      
+      /* Rotate first bar */
+      .active .bar1 {
+        -webkit-transform: rotate(-45deg) translate(-9px, 6px) ;
+        transform: rotate(-45deg) translate(-9px, 6px) ;
+      }
+      
+      /* Fade out the second bar */
+      .active .bar2 {
+        opacity: 0;
+      }
+      
+      /* Rotate last bar */
+      .active .bar3 {
+        -webkit-transform: rotate(45deg) translate(-8px, -8px) ;
+        transform: rotate(45deg) translate(-8px, -8px) ;
+      }
+
+      header.sticky .menuToggle {
+        color: rgb(0, 0, 0);
+      }
+
+      section {
+          padding: 20px;
+      }
+      .banner .content h2 {
+          font-size: 3em;
+          color: #111;
+      }
+
+      .row {
+          flex-direction: column;
+      }
+
+      .row .col50 {
+          position: relative;
+          width: 100%;
+      }
+
+      .row .col50 .imgBx {
+       height: 300px;
+       margin-top: 20px;
+    }
+
+    .menu .content {
+        margin-top: 20px;
+    }
+
+    .menu .content .box {
+        margin: 20px;
+    }
+
+    .menu .content .box .imgBx {
+        height: 260px;
+    }
+
+    .title {
+        text-align: center;        
+    }
+
+    .titleText {
+        font-size: 1.8em;
+        line-height: 1.5em;
+        margin-bottom: 15px;
+        font-weight: 300;
+    }
+
+    .testemunhos .content .box {
+        margin: 10px;
+        padding: 20px;
+    }
+
+    .contactForm {
+        padding: 35px 40px;
+        width: 70%;
+        margin-top: 20px;
+        margin-bottom: 30px;
+    }
+
+    .contactFormMap {
+        margin-top: 20px;
+        min-width: 400px;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .banner .content h2 {
+        font-size: 2.2em;
+        color: #111;
+    }
+}
