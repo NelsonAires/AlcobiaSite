@@ -1,35 +1,4 @@
-<?php 
-    $result = "";
-    $error  = "";
-  if(isset($_POST['submit']))
-  {
-    require 'phpmailer/PHPMailerAutoload.php';
-    $mail = new PHPMailer;
-    //smtp settings
-    $mail->isSMTP(); // send as HTML
-    $mail->Host = "smtp.gmail.com"; // SMTP servers
-    $mail->SMTPAuth = true; // turn on SMTP authentication
-    $mail->Username = "Your mail"; // Your mail
-    $mail->Password = 'Your password mail'; // Your password mail
-    $mail->Port = 587; //specify SMTP Port
-    $mail->SMTPSecure = 'tls';                               
-    $mail->setFrom($_POST['email'],$_POST['name']);
-    $mail->addAddress('Your mail');
-    $mail->addReplyTo($_POST['email'],$_POST['name']);
-    $mail->isHTML(true);
-    $mail->Subject='Form Submission:' .$_POST['subject'];
-    $mail->Body='<h3>Name :'.$_POST['name'].'<br> Email: '.$_POST['email'].'<br>Message: '.$_POST['message'].'</h3>';
-    if(!$mail->send())
-    {
-      $error = "Something went worng. Please try again.";
-    }
-    else 
-    {
-      $result="Thanks\t" .$_POST['name']. " for contacting us.";
-    }
-  }
-
-?><!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -37,15 +6,7 @@
     <title>Alcobia Lda</title>
     <link rel="stylesheet" href="/styles.css">
 
-
-<!-- FORMULÀRIO 1 ------
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script type="text/javascript" src="script.js"></script>
-    <script type="text/javascript" src="form/form.js"></script>
-    <php include '/form/handler.php' ?></php>  -->
-
-    <script type="text/javascript" src="script.js"></script>
-
 
 </head>
 <body>
@@ -320,121 +281,7 @@
                     </div><style>.mapouter{position:relative;text-align:right;width:100%;height:370px;}.gmap_canvas {overflow:hidden;background:none!important;width:100%;height:370px;}.gmap_iframe {height:370px!important;}</style></div> 
         </div> 
 
-        <!-- TESTE DE FORMULÀRIO 1 !!!!! 
-	
-					<div class="panel-body">
-						<form id="reused_form">
-						 	<div class="form-group">
-						 		<label><i class="fa fa-user" aria-hidden="true"></i>Nome</label>
-						 		<input type="text" name="name" class="form-control" placeholder="O seu Nome">
-						 	</div>
-						 	<div class="form-group">
-						 		<label><i aria-hidden="true"></i>Email</label>
-						 		<input type="email" name="email" class="form-control" placeholder="O seu Email">
-						 	</div>
-						 	<div class="form-group">
-						 		<label><i aria-hidden="true"></i>Mensagem</label>
-						 		<textarea rows="3" name="message" class="form-control" placeholder="Mensagem"></textarea>
-						 	</div>
-
-
-						 	<div class="form-group">
-						 		<button>Enviar</button>
-						 	</div>
-						</form>
-						<div id="error_message" style="width:100%; height:100%; display:none; ">
-						<h4>Erro</h4>
-						Ocorreu um erro ao enviar a sua mensagem. Tente de novo.
-						</div>
-						<div id="success_message" style="width:100%; height:100%; display:none; ">
-						<h2>Mensagem enviado com sucesso!.</h2>
-                        </div>
-                        
-					</div>
-		
-         Form Ended ---------------------------------------------------- -->
-
-
-        <!-- TESTE DE FORMULÀRIO  2 !!!!-->
-
-        <div class="contact1">
-            <div class="container-contact1">
-                <div class="contact1-pic js-tilt" data-tilt>
-                    <img src="images/img-01.png" alt="IMG">
-                </div>
-    
-                <form class="contact1-form validate-form">
-                    <span class="contact1-form-title">
-                        @SOENGSOUY
-                    </span>
-    
-                    <div class="wrap-input1 validate-input" data-validate = "Name is required">
-                        <input class="input1" type="text" name="name" placeholder="Name">
-                        <span class="shadow-input1"></span>
-                    </div>
-    
-                    <div class="wrap-input1 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
-                        <input class="input1" type="text" name="email" placeholder="Email">
-                        <span class="shadow-input1"></span>
-                    </div>
-    
-                    <div class="wrap-input1 validate-input" data-validate = "Subject is required">
-                        <input class="input1" type="text" name="subject" placeholder="Subject">
-                        <span class="shadow-input1"></span>
-                    </div>
-    
-                    <div class="wrap-input1 validate-input" data-validate = "Message is required">
-                        <textarea class="input1" name="message" placeholder="Message"></textarea>
-                        <span class="shadow-input1"></span>
-                    </div>
-    
-                    <div class="container-contact1-form-btn">
-                        <button class="contact1-form-btn">
-                            <span>
-                                Send Email
-                                <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
-                            </span>
-                        </button>
-                    </div>
-                </form>
-            </div>
-        </div>
-    
-	
-					
-		
-        <!-- Form Ended ---------------------------------------------------- -->
-        
-        
-
-       
     </section>
-
-    <!--====================================================-->
-	<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
-	<!--====================================================-->
-	<script src="vendor/bootstrap/js/popper.js"></script>
-	<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
-	<!--=====================================================-->
-	<script src="vendor/select2/select2.min.js"></script>
-	<!--=====================================================-->
-	<!-- <script src="vendor/tilt/tilt.jquery.min.js"></script> -->
-	<script src="vendor/tilt/tilt.jquery.min.js"></script>
-	<script >
-		$('.js-tilt').tilt({
-			scale: 1.1
-		})
-	</script>
-
-// <!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-23581568-13');
-</script>
-      
+   
 </body>
 </html>
