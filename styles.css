@@ -386,12 +386,32 @@ section {
     display: inline-block;
     text-transform: uppercase;
     text-decoration: none;
-    letter-spacing: 2px;
+    letter-spacing: 1.5px;
     transition: 0.5s;
     max-width: 100px;
     font-weight: 500;
     border: none;
+    cursor: pointer;
 }
+
+.contactForm .inputBox input[type="submit"]:hover {
+    color: #fff;;
+    background: rgb(13, 71, 103);
+    letter-spacing: 2.5px;
+}
+
+.copyrightText {
+    padding: 8px 40px;
+    border: solid 1px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.copyrightText a {
+    color: #1B75BB;
+    text-decoration: none;
+    font-weight: 500;
+}
+
 
 /* ----------------- @MEDIA 991PX  ----------------- */
 
