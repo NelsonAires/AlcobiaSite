@@ -114,9 +114,11 @@
                 </div>
              </div>
         </div>
-             <div class="title">
+            <!-- Link Redireciona para o Ínicio e de momento não acrescenta nada ao conteúdo -->
+            
+             <!-- <div class="title">
                 <a href="#" class="btn">Ver todos</a>
-             </div>
+             </div> -->
     </section>
 
     <!-- MARCAS/EXPERT SECTION -->
@@ -249,7 +251,29 @@
 
             <b>Morada: </b>Av. Padre Bartolomeu de Gusmão 15 2720-402 Damaia</pre>
         </div>
+
+
         <div class="contactForm">
+            <h3>Enviar mensagem</h3>
+            <form id="contactform" method="POST" action="contact-form-handler.php">
+           
+            <div class="inputBox">
+                <input name="name" type="text" placeholder="Nome" required>
+            </div>
+            <div class="inputBox">
+                <input name="email" type="email" placeholder="Email" required>
+            </div>
+            <div class="inputBox">
+                <textarea name="message" placeholder="Mensagem" row="4" required></textarea>
+            </div>
+            <div class="inputBox">
+                <input type="submit" value="Enviar">
+            </div>
+
+            </form>
+        </div>
+
+        <!-- <div class="contactForm">
             <h3>Enviar mensagem</h3>
             <div class="inputBox">
                 <input type="text" placeholder="Nome">
@@ -263,7 +287,8 @@
             <div class="inputBox">
                 <input type="submit" value="Enviar">
             </div>
-        </div>
+        </div> -->
+
         <div class="contactFormMap"> 
             <div class="mapouter">
                 <div class="gmap_canvas">
@@ -275,47 +300,9 @@
                             marginheight="0" 
                             marginwidth="0" 
                             src="https://maps.google.com/maps?width=600&amp;height=370&amp;hl=en&amp;saddr=Av.+Padre+Bartolomeu+de+Gusmão+15,+2720-402+Damaia,+Portugal&amp;daddr=&amp;t=&amp;z=15&amp;ie=UTF8&amp;iwloc=B&amp;output=embed">
-                        </iframe>
-                        <!-- <a href="https://piratebayproxy.net/">pirate bay proxy</a> -->
-                    </div><style>.mapouter{position:relative;text-align:right;width:100%;height:370px;}.gmap_canvas {overflow:hidden;background:none!important;width:100%;height:370px;}.gmap_iframe {height:370px!important;}</style></div> 
+                    </iframe>
+            </div><style>.mapouter{position:relative;text-align:right;width:100%;height:370px;}.gmap_canvas {overflow:hidden;background:none!important;width:100%;height:370px;}.gmap_iframe {height:370px!important;}</style></div> 
         </div> 
-
-        <div class="contactForm">
-            <form id="contact-form" method="POST" action="contact-form-handler.php">
-
-                <input name="name" type="text" class="inputBox" placeholder="Your Name" required><br>
-
-                <input name="email" type="email" class="inputBox" placeholder="Your Email" required><br>
-
-                <textarea name="message" class="inputBox" placeholder="Your Message" row="4" required></textarea><br>
-                
-                <input type="submit" class="inputBox" value="Send Message"><br>
-            </form>
-        </div>
-
-        <div class="contactForm">
-            <h3>Enviar mensagem</h3>
-            <form id="contactform" method="POST" action="contact-form-handler.php">
-           
-            <div class="inputBox">
-                <input name="name" type="text" placeholder="Nome_1" required>
-            </div>
-            <div class="inputBox">
-                <input name="email" type="email" placeholder="Email_1" required>
-            </div>
-            <div class="inputBox">
-                <textarea name="message" placeholder="Mensagem_1" row="4" required></textarea>
-            </div>
-            <div class="inputBox">
-                <input type="submit" value="Enviar_1">
-            </div>
-
-            </form>
-        </div>
-
-
-
-
     </section>
 
     <div class="copyrightText">
