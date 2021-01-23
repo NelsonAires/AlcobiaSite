@@ -10,6 +10,8 @@ function toggleMenu(){
     navigation.classList.toggle('active');
 }
 
+
+
 // function toggleMenu(x) {
 //     x.classList.toggle("change");
 //   }

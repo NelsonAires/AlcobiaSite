@@ -6,6 +6,7 @@
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
     scroll-behavior: smooth;
+    overflow-x: hidden;
 }
 
 p {
@@ -57,7 +58,8 @@ p {
 }
 
 header {
-    position: fixed;
+    /* position: fixed; */
+    position: sticky;
     top: 0;
     left: 0;
     width: 100%;
@@ -413,7 +415,7 @@ section {
 }
 
 
-/* ----------------- @MEDIA 991PX  ----------------- */
+/* ----------------- @MEDIA 991PX  --------------------------------------------------- */
 
 @media (max-width: 991px) {
 
@@ -421,6 +423,11 @@ section {
     header.sticky {
         padding: 10px 20px;
     }
+
+    /* header .menuToggle {
+        position: absolute;
+        margin-left: 60%;
+    }    TESTE A OVERFLOW X:HIDDEN */
 
     header .navigation {
         display: none;
@@ -448,9 +455,12 @@ section {
         font-size: 1.6em;
     }
 
-
     /* MENU BURGUER ANIMATION  */
+    
     .menuToggle {
+        position: relative;
+        width: 40px;
+        height: 40px;
         display: block;
         cursor: pointer;
     }
@@ -480,9 +490,11 @@ section {
         -webkit-transform: rotate(45deg) translate(-8px, -8px) ;
         transform: rotate(45deg) translate(-8px, -8px) ;
       }
+    
 
-      header.sticky .menuToggle {
+      header .sticky .menuToggle {
         color: rgb(0, 0, 0);
+        position: relative;
       }
 
       section {
@@ -536,8 +548,8 @@ section {
     }
 
     .contactForm {
-        padding: 35px 40px;
-        width: 70%;
+        padding: 25px 20px;
+        width: 80%;
         margin-top: 20px;
         margin-bottom: 30px;
     }
@@ -554,4 +566,12 @@ section {
         font-size: 2.2em;
         color: #111;
     }
+
+     /* ELEMINAR ESTA CLASSE CASO FUNCIONE*/
+
+    .menuToggle {
+        position: relative;
+        cursor: pointer;
+    }
+    
 }
