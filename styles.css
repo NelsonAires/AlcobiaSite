@@ -342,7 +342,7 @@ section {
     max-width: 400px;
     margin-top: 50px;
     border-radius: 10px;
-    scroll-behavior: none;
+    overflow: hidden;
 }
 
 .contactFormMap {
